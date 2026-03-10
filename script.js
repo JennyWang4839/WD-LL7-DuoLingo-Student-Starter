@@ -40,7 +40,7 @@ const feedback = document.getElementById("feedback");
 button.addEventListener("click", function () {
 
   // STEP 4: Random XP reward
-const earnedXP = xpRewards[Math.floor(Math.random() * xpRewards.length)];
+  const earnedXP = xpRewards[Math.floor(Math.random() * xpRewards.length)];
 
   xpTotal += earnedXP;
   xpDisplay.textContent = xpTotal;
@@ -56,6 +56,22 @@ const earnedXP = xpRewards[Math.floor(Math.random() * xpRewards.length)];
   // else if (...)
   // else (...)
 
+  if (xpTotal >= 20 && xpTotal < 50) {
+    feedback.textContent = "Great job! You're making fantastic progress!";
+    
+  }
+
+  else if (xpTotal >= 50 && xpTotal < 100) {
+    feedback.textContent = "Nice work! Keep it up!";
+  }
+
+  else if (xpTotal >= 100) {
+    feedback.textContent = "You're a language master! Keep it up!";
+  }
+
+  else {
+    feedback.textContent = "Keep going! Every lesson counts!";
+  }
 });
 
 /*
